@@ -406,6 +406,95 @@ body.is-staff .nav,body.is-staff .preview{display:none}
 .seated .empty{display:block;color:var(--mist)}
 @media (max-width:900px){.floor{grid-template-columns:1fr}}
 
+
+/* Staff tools: tabs, rota, clock in, hours */
+.stabs{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.02);overflow-x:auto;scrollbar-width:none}
+.stabs a{padding:8px 15px;border-radius:999px;font-size:14.5px;text-decoration:none;color:var(--soft);white-space:nowrap}
+.stabs a:hover{color:var(--shell)}
+.stabs a[aria-selected="true"]{background:var(--gold);color:var(--ink);font-weight:600}
+@media (max-width:760px){.staff-top{gap:12px}.stabs{order:3;width:100%}}
+.tool-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;margin:26px 0 14px}
+.tool-bar h2{margin:0;font-family:var(--serif);font-weight:500;font-size:2.3rem;line-height:1}
+html:lang(th) .tool-bar h2{font-size:1.8rem;font-weight:600}
+.staff .tool-bar + .stats{margin-top:6px}
+.tool-actions{display:flex;flex-wrap:wrap;gap:8px}
+.tool-hint{margin:0 0 14px;color:var(--mist);font-size:14px}
+.rota-scroll,.hours-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:var(--plan-bg);scrollbar-width:thin;scrollbar-color:var(--line-2) transparent}
+.rota,.hours-t{width:100%;min-width:940px;border-collapse:separate;border-spacing:0;font-size:14px}
+.rota th,.rota td,.hours-t th,.hours-t td{padding:8px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+.rota thead th,.hours-t thead th{font-weight:600;font-size:13px;color:var(--soft);vertical-align:top;background:var(--bg-2)}
+.rota thead th small{display:block;color:var(--mist);font-weight:400}
+.r-short,.r-ok{display:block;font-style:normal;font-size:12px;font-weight:500;margin-top:2px;line-height:1.3}
+.r-short{color:var(--err)}.r-ok{color:var(--ok)}
+.r-name{position:sticky;left:0;z-index:1;background:var(--plan-bg);min-width:140px;font-weight:600;white-space:nowrap}
+thead .r-name{z-index:2;background:var(--bg-2)}
+.r-name small{display:block;font-weight:400;color:var(--mist);font-size:12.5px;margin-left:16px}
+.r-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:8px;vertical-align:1px;flex:0 0 auto}
+.rota .is-today,.hours-t .is-today{background-color:rgba(228,182,108,.06)}
+.rota thead th.is-today,.hours-t thead th.is-today{color:var(--gold-2)}
+.rcell{display:block;width:100%;min-height:42px;border:1px dashed transparent;border-radius:10px;background:transparent;color:var(--shell);cursor:pointer;padding:3px;text-align:left}
+.rcell:hover{border-color:var(--line-2)}
+.shift{display:block;padding:7px 9px;border-radius:8px;background:color-mix(in srgb,var(--c) 17%,transparent);border-left:3px solid var(--c);font-variant-numeric:tabular-nums;font-size:13px;white-space:nowrap}
+.off{display:block;padding:7px 9px;color:var(--mist);opacity:.5;font-size:13px}
+.r-tot{font-variant-numeric:tabular-nums;font-weight:600;text-align:right!important;white-space:nowrap}
+.r-tot.is-over{color:var(--err)}
+.dim{color:var(--mist);font-weight:400}
+.neg{color:var(--err)}.pos{color:var(--ok)}
+.today-box{margin-top:20px;padding:18px 20px;border:1px solid var(--line);border-radius:18px;background:var(--bg-2)}
+.today-box h3{margin:0 0 8px;font-size:1.05rem;font-weight:600}
+.today-list{margin:0;padding:0;list-style:none}
+.today-list li{display:grid;grid-template-columns:16px minmax(0,1fr) minmax(0,1fr) auto auto;gap:6px 12px;align-items:center;padding:9px 0;border-top:1px solid var(--line);font-size:14.5px}
+.today-list li span:nth-child(3){color:var(--mist)}
+@media (max-width:600px){.today-list li{grid-template-columns:16px minmax(0,1fr) auto}.today-list li span:nth-child(3){display:none}.today-list li > :last-child{grid-column:2 / -1}}
+.st-in{color:var(--ok)}.st-out{color:var(--mist)}
+.num{font-variant-numeric:tabular-nums}
+.demo-note{margin-top:22px}
+.linkbtn{background:none;border:0;padding:0;color:var(--gold-2);text-decoration:underline;cursor:pointer;font:inherit}
+.kiosk-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px;margin:26px 0 20px}
+.k-time{margin:0;font-weight:700;font-stretch:112%;font-size:clamp(3rem,8vw,5rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.k-time small{font-size:.42em;color:var(--mist);font-weight:600}
+.k-date{margin:6px 0 0;color:var(--mist)}
+.k-sync{display:inline-block;margin:0;padding:5px 12px;border-radius:999px;border:1px solid var(--line-2);font-size:13px;color:var(--mist)}
+.k-sync.is-on{color:var(--ok);border-color:rgba(79,216,160,.4)}
+.k-h{margin:0 0 12px;font-weight:600;font-size:1.1rem}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:12px}
+@media (max-width:420px){.kgrid{grid-template-columns:1fr 1fr}}
+.kbtn{display:grid;align-content:start;gap:2px;text-align:left;padding:16px;border-radius:16px;border:1px solid var(--line-2);background:var(--bg-2);color:var(--shell);cursor:pointer;min-height:122px;transition:border-color .15s}
+.kbtn:hover{border-color:var(--gold)}
+.kbtn.is-in{border-color:rgba(79,216,160,.55);background:linear-gradient(180deg,rgba(79,216,160,.10),var(--bg-2))}
+.k-name{font-weight:650;font-size:1.15rem}
+.k-role,.k-shift{font-size:13px;color:var(--mist)}
+.k-state{margin-top:8px;font-size:13px;font-weight:600;color:var(--mist)}
+.kbtn.is-in .k-state{color:var(--ok)}
+.pin{text-align:center}
+.modal .pin h3{padding-right:0}
+.pin-dots{display:flex;justify-content:center;gap:14px;margin:18px 0 8px}
+.pin-dots i{width:16px;height:16px;border-radius:50%;border:2px solid var(--line-2);transition:background .1s}
+.pin-dots i.on{background:var(--gold);border-color:var(--gold)}
+.pin-dots.shake{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.pin-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:290px;margin:6px auto 0}
+.pin-pad button{height:64px;border-radius:16px;border:1px solid var(--line-2);background:rgba(255,255,255,.03);color:var(--shell);font-size:24px;font-weight:600;cursor:pointer}
+.pin-pad button:active{background:rgba(228,182,108,.22)}
+.m-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.tpls{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+.field select{width:100%;background:#0A1028;border:1px solid var(--line-2);border-radius:10px;color:var(--shell);font:inherit;font-size:16px;padding:12px 14px}
+.field input[type="time"]{color-scheme:dark}
+.hours-t td{font-variant-numeric:tabular-nums}
+.h-row{cursor:pointer}
+.h-row:hover > *,.h-row.is-open > *{background-color:rgba(255,255,255,.025)}
+.h-row:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.flags{display:inline-flex;gap:3px;margin-left:6px;vertical-align:middle}
+.flags i,.fk{display:inline-block;width:8px;height:8px;border-radius:50%}
+.f-late{background:var(--gold)}.f-over{background:#FF6B6B}.f-missing{background:#FF9C82;box-shadow:0 0 0 2px rgba(255,156,130,.3)}.f-norota{background:#8FB8FF}.f-noshow{background:#6E7699}.f-live{background:var(--ok)}
+.flag-key{display:flex;flex-wrap:wrap;gap:6px 18px;margin:12px 0 4px;padding:0;list-style:none;font-size:13px;color:var(--mist)}
+.flag-key li{display:flex;align-items:center;gap:7px}
+.h-detail > td{background:var(--bg-2);padding:10px 14px 14px}
+.plist{width:100%;border-collapse:collapse;font-size:14px;min-width:0}
+.plist th,.plist td{padding:8px;border-bottom:1px solid var(--line);text-align:left}
+.plist th{font-size:12.5px;color:var(--mist);font-weight:500}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,16px);z-index:80;padding:11px 18px;border-radius:12px;background:var(--panel);border:1px solid var(--line-2);color:var(--shell);font-size:14px;box-shadow:0 12px 40px rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s}
+.toast.is-on{opacity:1;visibility:visible;transform:translate(-50%,0)}
 .in{animation:in .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 100ms + 250ms)}
 @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){
@@ -625,14 +714,15 @@ body.is-staff .nav,body.is-staff .preview{display:none}
 </footer>
 </div>
 
-<section class="staff" id="staff" hidden aria-label="Staff bookings view">
+<section class="staff" id="staff" hidden aria-label="Staff tools">
   <div class="wrap staff-top">
-    <h1><span class="brand"><i aria-hidden="true"></i><b>RISE</b></span><span data-i18n="sv.title">Bookings</span></h1>
-    <div class="daynav">
-      <button type="button" id="sPrev" aria-label="Previous day">&lsaquo;</button>
-      <strong id="sDay"></strong>
-      <button type="button" id="sNext" aria-label="Next day">&rsaquo;</button>
-    </div>
+    <h1><span class="brand"><i aria-hidden="true"></i><b>RISE</b></span><span data-i18n="sv.staff">Staff</span></h1>
+    <nav class="stabs" aria-label="Staff tools">
+      <a href="#staff" data-tab="bookings" aria-selected="true" data-i18n="st.book">Bookings</a>
+      <a href="#staff-rota" data-tab="rota" aria-selected="false" data-i18n="st.rota">Rota</a>
+      <a href="#staff-clock" data-tab="clock" aria-selected="false" data-i18n="st.clock">Clock in</a>
+      <a href="#staff-hours" data-tab="hours" aria-selected="false" data-i18n="st.hours">Hours</a>
+    </nav>
     <div class="nav-r">
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-l="en" aria-pressed="true">EN</button>
@@ -641,7 +731,14 @@ body.is-staff .nav,body.is-staff .preview{display:none}
       <a class="btn btn--small" href="#top" data-i18n="sv.back">Back to website</a>
     </div>
   </div>
-  <div class="wrap">
+  <div class="wrap" id="tab-bookings">
+    <div class="tool-bar"><h2 data-i18n="sv.title">Bookings</h2>
+      <div class="daynav">
+        <button type="button" id="sPrev" aria-label="Previous day">&lsaquo;</button>
+        <strong id="sDay"></strong>
+        <button type="button" id="sNext" aria-label="Next day">&rsaquo;</button>
+      </div>
+    </div>
     <div class="stats" id="stats"></div>
     <h2 data-i18n="sv.tl">Tables through the night</h2>
     <div class="tl-scroll"><div class="tl" id="timeline"></div></div>
@@ -665,6 +762,9 @@ body.is-staff .nav,body.is-staff .preview{display:none}
     </div>
     <p class="fine" style="margin-top:32px" data-i18n="sv.fine">This view uses sample bookings. In the live version it sits behind a staff login and fills with real bookings as they come in.</p>
   </div>
+  <div class="wrap" id="tab-rota" hidden></div>
+  <div class="wrap" id="tab-clock" hidden></div>
+  <div class="wrap" id="tab-hours" hidden></div>
 </section>
 
 <aside class="preview" id="preview" aria-label="Preview notice">
@@ -739,7 +839,7 @@ body.is-staff .nav,body.is-staff .preview{display:none}
       'v.hours': 'Opening hours', today: 'Today', hoursNote: 'Last table bookings 21:30. Sunset today at {t}, so book from 17:00 for the best of it.',
       'foot.from': 'Central Pattaya. From the team behind Beer Hubb.', 'foot.staff': 'Staff', 'foot.by': 'Site by',
       'pv.t': 'Preview.', 'pv.long': 'Opening hours and table layout are samples until confirmed.', 'pv.pay': 'Payments run in demo mode.', 'pv.staff': 'Open staff view',
-      'sv.title': 'Bookings', 'sv.back': 'Back to website', 'sv.tl': 'Tables through the night', 'sv.kon': 'Booked online, deposit paid', 'sv.kph': 'Phone or walk-in hold, no deposit',
+      'sv.title': 'Bookings', 'sv.staff': 'Staff', 'st.book': 'Bookings', 'st.rota': 'Rota', 'st.clock': 'Clock in', 'st.hours': 'Hours', 'sv.back': 'Back to website', 'sv.tl': 'Tables through the night', 'sv.kon': 'Booked online, deposit paid', 'sv.kph': 'Phone or walk-in hold, no deposit',
       'sv.floorat': 'Floor at', 'sv.seated': 'Seated', 'sv.empty': 'Empty', 'sv.fine': 'This view uses sample bookings. In the live version it sits behind a staff login and fills with real bookings as they come in.',
       tomorrow: 'Tomorrow', passed: 'Passed', full: 'Full', nfree: '{n} free',
       guests: g => g + (g === 1 ? ' guest' : ' guests'), seats: n => n + ' seats',
@@ -791,7 +891,7 @@ body.is-staff .nav,body.is-staff .preview{display:none}
       'v.hours': 'เวลาเปิดทำการ', today: 'วันนี้', hoursNote: 'รับจองโต๊ะรอบสุดท้าย 21:30 น. วันนี้พระอาทิตย์ตกเวลา {t} น. จองตั้งแต่ 17:00 น. เพื่อชมวิวสวยที่สุด',
       'foot.from': 'เซ็นทรัล พัทยา จากทีมงานเบียร์ ฮับ', 'foot.staff': 'สำหรับพนักงาน', 'foot.by': 'เว็บไซต์โดย',
       'pv.t': 'ตัวอย่าง', 'pv.long': 'เวลาเปิดและผังโต๊ะเป็นข้อมูลตัวอย่างจนกว่าจะยืนยัน', 'pv.pay': 'การชำระเงินอยู่ในโหมดทดลอง', 'pv.staff': 'ดูหน้าพนักงาน',
-      'sv.title': 'การจอง', 'sv.back': 'กลับหน้าเว็บไซต์', 'sv.tl': 'ตารางโต๊ะทั้งคืน', 'sv.kon': 'จองออนไลน์ ชำระมัดจำแล้ว', 'sv.kph': 'จองทางโทรศัพท์หรือวอล์กอิน ไม่มีมัดจำ',
+      'sv.title': 'การจอง', 'sv.staff': 'พนักงาน', 'st.book': 'การจอง', 'st.rota': 'ตารางกะ', 'st.clock': 'ลงเวลา', 'st.hours': 'ชั่วโมงงาน', 'sv.back': 'กลับหน้าเว็บไซต์', 'sv.tl': 'ตารางโต๊ะทั้งคืน', 'sv.kon': 'จองออนไลน์ ชำระมัดจำแล้ว', 'sv.kph': 'จองทางโทรศัพท์หรือวอล์กอิน ไม่มีมัดจำ',
       'sv.floorat': 'ผังร้านเวลา', 'sv.seated': 'มีลูกค้า', 'sv.empty': 'ว่าง', 'sv.fine': 'หน้านี้ใช้ข้อมูลการจองตัวอย่าง ในเวอร์ชันจริงจะต้องล็อกอินสำหรับพนักงาน และแสดงการจองจริงทันทีที่มีเข้ามา',
       tomorrow: 'พรุ่งนี้', passed: 'เลยเวลา', full: 'เต็ม', nfree: 'ว่าง {n}',
       guests: g => g + ' ท่าน', seats: n => n + ' ที่นั่ง',
@@ -1293,6 +1393,7 @@ body.is-staff .nav,body.is-staff .preview{display:none}
   function renderAll() {
     applyStatic(); renderLive(); renderTonight(); renderHours(); renderMenu(); renderGallery(); renderBooking();
     if (!$('#staff').hidden) renderStaff();
+    if (window.RISE) window.RISE.onLang.forEach(f => f());
   }
   $$('.lang button').forEach(b => b.addEventListener('click', () => {
     lang = b.dataset.l; try { localStorage.setItem('rise-lang', lang); } catch (_) {}
@@ -1302,7 +1403,7 @@ body.is-staff .nav,body.is-staff .preview{display:none}
   if (!T[lang]) lang = 'en';
 
   function route() {
-    const isStaff = location.hash === '#staff', was = document.body.classList.contains('is-staff');
+    const isStaff = location.hash.startsWith('#staff'), was = document.body.classList.contains('is-staff');
     document.body.classList.toggle('is-staff', isStaff);
     $('#site').hidden = isStaff; $('#staff').hidden = !isStaff;
     if (isStaff) {
@@ -1323,6 +1424,7 @@ body.is-staff .nav,body.is-staff .preview{display:none}
   window.addEventListener('scroll', onScroll, { passive: true });
   $('#previewX').addEventListener('click', () => { pvHidden = true; onScroll(); try { sessionStorage.setItem('rise-pv', '1'); } catch (_) {} });
 
+  window.RISE = { lang: () => lang, openModal, closeModal, onLang: [] };
   renderAll(); route(); onScroll();
   setInterval(renderLive, 1000);
   setInterval(renderTonight, 60000);
@@ -1330,5 +1432,6 @@ body.is-staff .nav,body.is-staff .preview{display:none}
   window.__rise = { S, TABLES, depositFor, fits, freeTables, bookingsFor, isFree, staff, sunsetMin, todayKey, setLang: l => { lang = l; renderAll(); } };
 })();
 </script>
+<script src="staff.js" defer></script>
 </body>
 </html>

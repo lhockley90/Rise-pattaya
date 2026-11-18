@@ -12,7 +12,11 @@ Built by AiEngineered.
 - `MENU` and `PHOTOS` near the top of the script: menu cards and the "Nights at RISE" gallery.
 - `TABLES`: the floor plan (id, shape, seats, position). Sample layout until Garry confirms the real one.
 - `img/`: photos (AVIF, from @rise.pattaya), `og.jpg` link preview, `icon-180.png`.
-- `#staff` opens the staff bookings view (timeline + floor at a chosen time).
+- Staff area (`staff.js`), linked as "Staff" in the footer:
+  - `#staff`: bookings timeline and floor plan at a chosen time
+  - `#staff-rota`: weekly rota. Tap a day to add, change or hand over a shift; cover warnings per night; copy last week
+  - `#staff-clock`: clock in and out with name + 4-digit PIN (bookmark this on the bar tablet)
+  - `#staff-hours`: paid hours per person per day, late arrivals, missed clock-outs (fixable), overtime flags, CSV download, send to Google Sheet
 - `robots.txt`, `sitemap.xml`: for Google.
 
 No build step. Vercel serves the files as they are.
@@ -33,6 +37,18 @@ Phase 2: live bookings.
 - Stripe (RISE's own Thailand account): Checkout with cards and PromptPay, deposit paid straight to RISE
 - Webhook: confirms the booking once paid, holds the table, emails the guest, adds it to the restaurant calendar
 - Staff view behind a login
+
+## Timesheet to Google Sheets
+
+Every clock-in, clock-out and manager fix is sent to a Google Sheet once it's connected (one row per shift, plus a "Weekly totals" tab).
+
+1. Create a Google Sheet "RISE Timesheet", open Extensions > Apps Script, paste `tools/google-sheets-timesheet.gs`, set `SHARED_KEY`.
+2. Deploy > New deployment > Web app (Execute as: Me, Who has access: Anyone). Copy the URL.
+3. In `staff.js` set `SHEET_URL` to that URL and `SHEET_KEY` to the same key. Push.
+
+Hours rules (top of `staff.js`): 60-minute unpaid break on shifts over 5 hours, flags over 8 hours a day / 48 a week (Thai Labour Protection Act) with 15 minutes' grace, late after 10 minutes.
+
+Until phase 2, the rota and hours are saved in the browser of the device using them (sample data). Phase 2 moves them to Supabase so every phone and tablet shares them, with a manager login and PINs checked on the server.
 
 ## Domain
 
