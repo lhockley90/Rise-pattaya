@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rise | Restaurant &amp; Bar, Pattaya</title>
+<meta name="description" content="Rise is a restaurant and bar in Pattaya from the team behind Beer Hubb. See which tables are free, choose where you sit and book online.">
+<meta name="theme-color" content="#10172E">
+<meta property="og:title" content="Rise | Restaurant & Bar, Pattaya">
+<meta property="og:description" content="See which tables are free, choose where you sit and book online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310172E'/%3E%3Ccircle cx='32' cy='42' r='16' fill='%23FFB648'/%3E%3Crect x='0' y='42' width='64' height='22' fill='%2310172E'/%3E%3Crect x='8' y='41' width='48' height='2' fill='%23FFD58A'/%3E%3C/svg%3E">
+<style>
+:root{
+  --dusk:#10172E; --dusk-2:#141C3A; --panel:#172048; --plan-bg:#0E1431;
+  --line:#26305C; --line-2:#3A4680;
+  --mist:#97A3CB; --shell:#ECEFF7;
+  --light:#FFB648; --light-2:#FFD58A; --ember:#FF7A4D;
+  --err:#FF9C82;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--dusk);color:var(--shell);font-family:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--light);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,32px)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:0 22px;border-radius:10px;font-weight:600;font-size:16px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .2s,border-color .2s,color .2s}
+.btn--primary{background:var(--light);color:#10172E}
+.btn--primary:hover{background:var(--light-2)}
+.btn--ghost{background:transparent;border-color:var(--line-2);color:var(--shell)}
+.btn--ghost:hover{border-color:var(--shell)}
+.btn--small{min-height:40px;padding:0 16px;font-size:15px}
+.btn--block{width:100%}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+
+/* ---------- Nav ---------- */
+.nav{position:fixed;inset:0 0 auto;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(18px,4vw,40px);border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+.nav.is-solid{background:rgba(16,23,46,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-color:var(--line)}
+.brand{font-weight:800;font-stretch:125%;letter-spacing:.16em;font-size:20px;text-decoration:none;color:var(--shell)}
+.brand small{font-weight:500;font-stretch:100%;letter-spacing:0;font-size:14px;color:var(--mist);margin-left:10px}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{text-decoration:none;font-size:15px;color:var(--shell);opacity:.85}
+.nav-links a:hover{opacity:1}
+@media (max-width:760px){.nav-links a:not(.btn){display:none}.brand small{display:none}}
+
+/* ---------- Hero ---------- */
+.sky{position:relative;height:clamp(400px,66svh,780px);overflow:hidden;display:flex;align-items:flex-end;justify-content:center;
+  background:linear-gradient(180deg,#0A1024 0%,#111939 34%,#272352 62%,#5B3A64 85%,#A3564F 100%)}
+.sky::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;z-index:3;background:linear-gradient(90deg,transparent,rgba(255,213,138,.95) 50%,transparent)}
+.glow{position:absolute;left:50%;bottom:-35%;width:150vw;height:95%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(255,150,80,.5),rgba(255,122,77,.14) 55%,transparent);animation:fade 3s ease-out .2s both;pointer-events:none}
+.sun{position:absolute;left:50%;bottom:0;width:min(50vw,540px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 50% 34%,#FFF1CC 0%,#FFC867 30%,#FF9B53 64%,#FF7A4D 100%);
+  box-shadow:0 0 140px 40px rgba(255,140,70,.32);transform:translate(-50%,40%);animation:rise 3.2s cubic-bezier(.16,.8,.24,1) .15s both}
+.mark{position:relative;z-index:2;margin:0;font-weight:800;font-stretch:125%;font-size:clamp(5.4rem,25vw,22rem);line-height:.73;letter-spacing:.02em;color:#090E22;user-select:none}
+.sea{position:relative;overflow:hidden;text-align:center;padding:clamp(56px,11vh,112px) 20px clamp(80px,13vh,132px);background:linear-gradient(180deg,#1F1A3D 0%,#131A38 38%,var(--dusk) 100%)}
+.shimmer{position:absolute;top:0;left:50%;width:min(46vw,480px);height:170px;transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(ellipse 50% 100% at 50% 0,rgba(255,196,110,.6),rgba(255,122,77,.16) 60%,transparent 85%);
+  -webkit-mask-image:repeating-linear-gradient(180deg,#000 0 2px,transparent 2px 8px);mask-image:repeating-linear-gradient(180deg,#000 0 2px,transparent 2px 8px);
+  animation:fade 3.2s ease-out .5s both}
+.hero-copy{position:relative;max-width:640px;margin:0 auto}
+.hero-copy p{margin:0 0 30px;font-size:clamp(1.12rem,1.7vw,1.4rem);line-height:1.45}
+.hero-copy p span{display:block;color:var(--mist);font-size:.82em;margin-top:6px}
+.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+@keyframes rise{from{transform:translate(-50%,102%)}to{transform:translate(-50%,40%)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* ---------- Sections ---------- */
+.section{padding:clamp(80px,11vw,136px) 0}
+.h2{margin:0 0 .45em;font-weight:650;font-stretch:112%;font-size:clamp(2rem,4.3vw,3.4rem);line-height:1.04;letter-spacing:-.015em;max-width:20ch;text-wrap:balance}
+.lede{margin:0;max-width:56ch;color:var(--mist);font-size:clamp(1.02rem,1.3vw,1.15rem)}
+
+.story-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,6vw,96px);align-items:end}
+.story-grid p{margin:0 0 1em;max-width:58ch}
+.facts{margin:0;border-top:1px solid var(--line)}
+.facts div{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.facts dt{color:var(--mist);font-size:15px}
+.facts dd{margin:0}
+@media (max-width:860px){.story-grid{grid-template-columns:1fr}}
+
+.menu-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px;margin-bottom:48px}
+.menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,56px)}
+.menu-grid h3{margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--line-2);font-weight:600;font-stretch:112%;font-size:1.2rem;color:var(--light)}
+.dish{padding:14px 0;border-bottom:1px solid var(--line)}
+.dish-top{display:flex;justify-content:space-between;gap:16px;font-weight:600}
+.dish-top span:last-child{font-variant-numeric:tabular-nums;font-weight:500;white-space:nowrap}
+.dish p{margin:2px 0 0;color:var(--mist);font-size:15px;line-height:1.45}
+.menu-note{margin:28px 0 0;color:var(--mist);font-size:15px}
+@media (max-width:900px){.menu-grid{grid-template-columns:1fr}}
+
+/* ---------- Booking ---------- */
+.book{background:var(--dusk-2);position:relative}
+.book::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,182,72,.7) 50%,transparent)}
+.book-head{margin-bottom:44px}
+.book-grid{display:grid;grid-template-columns:minmax(320px,410px) minmax(0,1fr);grid-template-areas:"a plan" "b plan";gap:16px 32px;align-items:start}
+.book-a{grid-area:a}.book-b{grid-area:b}
+.plan-wrap{grid-area:plan;position:sticky;top:88px}
+@media (max-width:980px){.book-grid{grid-template-columns:1fr;grid-template-areas:"a" "plan" "b"}.plan-wrap{position:static}}
+
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:22px}
+.step{border:0;margin:0;padding:0;min-width:0;min-inline-size:0}
+.book-grid > *{min-width:0}
+.step + .step{margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+.step legend{float:left;width:100%;display:flex;align-items:center;gap:10px;padding:0;margin-bottom:14px;font-weight:600;font-size:16px}
+.step legend + *{clear:both}
+.step-n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;border:1px solid var(--line-2);font-size:13px;font-variant-numeric:tabular-nums;color:var(--mist)}
+.step-hint{margin:-4px 0 12px;color:var(--mist);font-size:14px}
+
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 8px;scrollbar-width:thin;scrollbar-color:var(--line-2) transparent}
+.chip{flex:0 0 auto;border:1px solid var(--line-2);background:transparent;color:var(--shell);border-radius:12px;padding:8px 12px;font-size:14px;line-height:1.25;text-align:left;cursor:pointer;transition:background .15s,border-color .15s}
+.chip:hover:not(:disabled){border-color:var(--shell)}
+.chip small{display:block;font-size:12px;color:var(--mist);font-variant-numeric:tabular-nums}
+.chip[aria-checked="true"]{background:var(--light);border-color:var(--light);color:#10172E}
+.chip[aria-checked="true"] small{color:#4A3612}
+.chip:disabled{opacity:.35;cursor:not-allowed}
+.chip[aria-checked="true"]:disabled{opacity:.7}
+.times{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.times .chip{text-align:center;padding:8px 4px;font-variant-numeric:tabular-nums}
+@media (max-width:420px){.times{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+.stepper{display:flex;align-items:center;gap:6px}
+.stepper button{width:46px;height:46px;border-radius:12px;border:1px solid var(--line-2);background:transparent;color:var(--shell);font-size:22px;line-height:1;cursor:pointer}
+.stepper button:disabled{opacity:.35;cursor:not-allowed}
+.stepper output{min-width:110px;text-align:center;font-weight:600;font-size:18px;font-variant-numeric:tabular-nums}
+.g-note{margin:10px 0 0;color:var(--mist);font-size:14px}
+
+.picked{display:flex;align-items:center;gap:14px;padding:14px;border:1px dashed var(--line-2);border-radius:14px;color:var(--mist);font-size:15px}
+.picked.is-set{border-style:solid;border-color:var(--light);color:var(--shell)}
+.picked-badge{flex:0 0 auto;display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--plan-bg);font-weight:700;font-stretch:112%}
+.picked.is-set .picked-badge{background:var(--light);color:#10172E}
+
+.field{display:grid;gap:6px;margin-bottom:14px}
+.field label{font-size:14px;color:var(--mist)}
+.field input,.field textarea{width:100%;background:#0F1633;border:1px solid var(--line-2);border-radius:10px;color:var(--shell);font:inherit;font-size:16px;padding:12px 14px}
+.field textarea{min-height:76px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--light);box-shadow:0 0 0 3px rgba(255,182,72,.2)}
+.field input[aria-invalid="true"]{border-color:var(--err)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.err{color:var(--err);font-size:13px;min-height:0}
+@media (max-width:420px){.field-row{grid-template-columns:1fr}}
+
+.summary{margin-top:22px;padding:16px 0 0;border-top:1px solid var(--line)}
+.sum-row{display:flex;justify-content:space-between;gap:16px;padding:5px 0;font-size:15px}
+.sum-row span:first-child{color:var(--mist)}
+.sum-row span:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.sum-total{margin-top:6px;padding-top:12px;border-top:1px solid var(--line);font-size:17px;font-weight:600}
+.sum-total span:first-child{color:var(--shell)}
+.sum-note{margin:8px 0 0;color:var(--mist);font-size:14px}
+
+.pay{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 16px}
+.pay-opt{position:relative;display:block;padding:12px 14px;border:1px solid var(--line-2);border-radius:12px;cursor:pointer}
+.pay-opt input{position:absolute;opacity:0;pointer-events:none}
+.pay-opt:has(input:checked){border-color:var(--light);background:rgba(255,182,72,.08)}
+.pay-opt:has(input:focus-visible){outline:2px solid var(--light);outline-offset:3px}
+.pay-t{display:block;font-weight:600;font-size:15px}
+.pay-d{display:block;color:var(--mist);font-size:12.5px;line-height:1.35;margin-top:2px}
+.fine{margin:12px 0 0;color:var(--mist);font-size:13.5px;line-height:1.5}
+.form-msg{margin:12px 0 0;color:var(--err);font-size:14px}
+
+/* Floor plan */
+.plan-card{background:var(--plan-bg);border:1px solid var(--line);border-radius:22px;padding:20px}
+.plan-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px;margin-bottom:12px}
+.plan-top h3{margin:0;font-weight:600;font-stretch:112%;font-size:1.15rem}
+.plan-ctx{color:var(--mist);font-size:14.5px;font-variant-numeric:tabular-nums}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 10px;padding:0;list-style:none;font-size:13px;color:var(--mist)}
+.legend li{display:flex;align-items:center;gap:7px}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;border:1.5px solid #AEBAE2}
+.legend .lg-sel{background:var(--light);border-color:var(--light)}
+.legend .lg-booked{border-color:#4A5590;background:repeating-linear-gradient(45deg,#161F42 0 3px,#2E3A70 3px 5px)}
+.legend .lg-nofit{opacity:.35}
+.legend .lg-occ{background:rgba(255,122,77,.25);border-color:var(--ember)}
+.plan-scroll{overflow-x:auto;margin:0 -6px;padding:0 6px;scrollbar-width:thin;scrollbar-color:var(--line-2) transparent}
+.plan-scroll svg{width:100%;min-width:600px;height:auto}
+.plan-status{min-height:1.5em;margin:10px 0 0;font-size:14.5px;color:var(--shell)}
+.free{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.free p{margin:0 0 10px;font-size:14px;color:var(--mist)}
+.free .chips{flex-wrap:wrap;overflow:visible}
+
+.room{fill:#121A3A;stroke:var(--line-2);stroke-width:2}
+.glass{stroke:var(--line-2);stroke-width:1.5;stroke-dasharray:6 8}
+.gap{fill:var(--plan-bg)}
+.zone{fill:var(--mist);font-size:19px;font-family:'Archivo',sans-serif}
+.zone--c{text-anchor:middle}
+.fixture{fill:#0C1229;stroke:var(--line)}
+.stool{fill:#0C1229;stroke:var(--line-2)}
+.tb .tb-top{fill:rgba(174,186,226,.07);stroke:#AEBAE2;stroke-width:1.6;transition:fill .18s,stroke .18s}
+.tb .seat{fill:#28335F}
+.tb .tb-id{fill:var(--shell);font-size:18px;font-weight:600;font-family:'Archivo',sans-serif;pointer-events:none;text-anchor:middle}
+.tb:focus{outline:none}
+.tb--free{cursor:pointer}
+.tb--free:hover .tb-top,.tb--free:focus-visible .tb-top{fill:rgba(255,182,72,.2);stroke:var(--light)}
+.tb:focus-visible .tb-top{stroke-width:3.5}
+.tb--selected{cursor:pointer}
+.tb--selected .tb-top{fill:var(--light);stroke:var(--light)}
+.tb--selected .tb-id{fill:#10172E}
+.tb--selected .seat{fill:#B88531}
+.tb--booked .tb-top{stroke:#4A5590}
+.tb--booked .tb-id{fill:#7480AE}
+.tb--nofit{opacity:.3}
+.tb--occupied .tb-top{fill:rgba(255,122,77,.24);stroke:var(--ember)}
+.tb--occupied .seat{fill:#7A4A4A}
+.tb--empty .tb-top{stroke:#5B679A}
+.tb--staff{cursor:default}
+
+/* ---------- Visit ---------- */
+.visit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,56px);margin-top:44px}
+.visit-grid h3{margin:0 0 12px;font-weight:600;font-stretch:112%;font-size:1.15rem}
+.visit-grid p{margin:0 0 16px;color:var(--mist)}
+.hours{margin:0;padding:0;list-style:none}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.hours li span:first-child{color:var(--mist)}
+.contact a{color:var(--shell)}
+@media (max-width:860px){.visit-grid{grid-template-columns:1fr}}
+
+/* ---------- Footer ---------- */
+.foot{border-top:1px solid var(--line);padding:40px 0 120px;color:var(--mist);font-size:14px}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px}
+.foot .brand{font-size:18px}
+.foot a{color:var(--mist)}
+.foot a:hover{color:var(--shell)}
+
+/* ---------- Preview pill ---------- */
+.preview{opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:40;display:flex;align-items:center;gap:14px;width:min(760px,calc(100% - 24px));padding:10px 10px 10px 18px;border-radius:14px;background:rgba(23,32,72,.95);border:1px solid var(--line-2);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:13.5px;line-height:1.4;color:var(--mist);box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.preview[hidden]{display:none}
+.preview.is-on{opacity:1;visibility:visible}
+@media (max-width:600px){.preview .pv-long{display:none}}
+.preview p{margin:0;flex:1}
+.preview strong{color:var(--shell);font-weight:600}
+.preview a{color:var(--light);white-space:nowrap}
+.preview button{flex:0 0 auto;width:34px;height:34px;border-radius:9px;border:1px solid var(--line-2);background:transparent;color:var(--shell);cursor:pointer;font-size:18px;line-height:1}
+
+/* ---------- Modal ---------- */
+.modal{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:18px;background:rgba(6,9,22,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.modal[hidden]{display:none}
+.modal-card{position:relative;width:min(440px,100%);max-height:calc(100svh - 36px);overflow:auto;background:var(--panel);border:1px solid var(--line-2);border-radius:22px;padding:28px 24px 24px;animation:pop .22s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.modal-x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:10px;border:1px solid var(--line-2);background:transparent;color:var(--shell);font-size:20px;line-height:1;cursor:pointer}
+.modal h3{margin:0 0 8px;font-weight:650;font-stretch:112%;font-size:1.45rem;line-height:1.15;padding-right:40px}
+.modal p{margin:0 0 14px;color:var(--mist);font-size:15px}
+.m-dl{margin:0 0 18px;border-top:1px solid var(--line)}
+.m-dl div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.m-dl dt{color:var(--mist)}
+.m-dl dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.qr{display:grid;place-items:center;margin:4px 0 16px;padding:16px;background:#fff;border-radius:16px}
+.qr svg{width:200px;height:200px}
+.tick{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--light);margin-bottom:16px}
+.ref{font-weight:700;font-stretch:112%;color:var(--shell);letter-spacing:.04em}
+
+/* ---------- Staff view ---------- */
+body.is-staff .nav,body.is-staff .preview{display:none}
+.staff{min-height:100vh;padding-bottom:80px}
+.staff-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding-top:20px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.staff-top h1{margin:0;display:flex;align-items:baseline;gap:12px;font-size:20px}
+.staff-top h1 span:not(.brand){font-weight:500;font-size:16px;color:var(--mist)}
+.daynav{display:flex;align-items:center;gap:8px}
+.daynav button{width:40px;height:40px;border-radius:10px;border:1px solid var(--line-2);background:transparent;color:var(--shell);font-size:18px;cursor:pointer}
+.daynav strong{min-width:150px;text-align:center;font-weight:600;font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:28px 0;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.stat{padding:18px 20px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:650;font-stretch:112%;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span{color:var(--mist);font-size:14px}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.staff h2{margin:0 0 14px;font-weight:600;font-stretch:112%;font-size:1.2rem}
+.tl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:var(--plan-bg);scrollbar-width:thin;scrollbar-color:var(--line-2) transparent}
+.tl{min-width:920px;padding:6px 0}
+.tl-row{display:grid;grid-template-columns:118px 1fr;align-items:center;min-height:40px}
+.tl-row + .tl-row{border-top:1px solid rgba(38,48,92,.6)}
+.tl-label{padding:0 14px;font-size:13.5px;white-space:nowrap}
+.tl-label strong{font-weight:650}
+.tl-label span{color:var(--mist);margin-left:6px}
+.tl-track{position:relative;height:40px;margin-right:16px;background-image:linear-gradient(to right,rgba(58,70,128,.45) 1px,transparent 1px);background-size:calc(100% / 14) 100%}
+.tl-head .tl-track{background:none;height:30px}
+.tl-head .tl-track span{position:absolute;top:6px;transform:translateX(-50%);font-size:12.5px;color:var(--mist);font-variant-numeric:tabular-nums}
+.tl-head .tl-track span:first-child{transform:none}
+.tl-head .tl-track span:last-child{transform:translateX(-100%)}
+.tl-bar{position:absolute;top:5px;bottom:5px;display:flex;align-items:center;justify-content:space-between;gap:6px;padding:0 8px;border:0;border-left:3px solid var(--light);border-radius:6px;background:rgba(255,182,72,.15);color:var(--shell);font-size:12.5px;text-align:left;cursor:pointer;overflow:hidden;white-space:nowrap}
+.tl-bar span:first-child{overflow:hidden;text-overflow:ellipsis}
+.tl-bar span:last-child{color:var(--mist);font-variant-numeric:tabular-nums}
+.tl-bar--phone{border-left-color:var(--mist);background:rgba(151,163,203,.13)}
+.tl-bar--new{background:rgba(255,182,72,.38);box-shadow:inset 0 0 0 1px var(--light)}
+.tl-bar[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--shell)}
+.tl-now{position:absolute;top:0;bottom:0;width:2px;background:var(--ember);z-index:2;pointer-events:none}
+.tl-key{display:flex;flex-wrap:wrap;gap:6px 18px;margin:10px 0 0;padding:0;list-style:none;font-size:13px;color:var(--mist)}
+.tl-key li{display:flex;align-items:center;gap:7px}
+.tl-key i{width:14px;height:14px;border-radius:4px;border-left:3px solid var(--light);background:rgba(255,182,72,.15)}
+.tl-key .k-phone{border-left-color:var(--mist);background:rgba(151,163,203,.13)}
+.detail{margin-top:16px;padding:18px 20px;border:1px solid var(--line-2);border-radius:16px;background:var(--panel)}
+.detail h3{margin:0 0 10px;font-size:1.05rem}
+.detail dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 24px;margin:0}
+.detail dt{color:var(--mist);font-size:13px}
+.detail dd{margin:0;font-variant-numeric:tabular-nums}
+.floor{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;margin-top:40px;align-items:start}
+.floor-ctrl{display:flex;align-items:center;gap:14px;margin:0 0 12px}
+.floor-ctrl input{flex:1;accent-color:var(--light)}
+.floor-ctrl output{font-weight:650;font-variant-numeric:tabular-nums;min-width:52px}
+.seated{margin:0;padding:0;list-style:none}
+.seated li{display:grid;grid-template-columns:40px 1fr auto;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.seated li b{font-weight:650}
+.seated li span:last-child{color:var(--mist);font-variant-numeric:tabular-nums}
+.seated .empty{display:block;color:var(--mist)}
+@media (max-width:900px){.floor{grid-template-columns:1fr}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Rise, back to top">RISE<small>Pattaya</small></a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#story">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#visit">Find us</a>
+    <a class="btn btn--primary btn--small" href="#book">Book a table</a>
+  </nav>
+</header>
+
+<div id="site">
+<main>
+  <section class="hero" id="top" aria-label="Rise, restaurant and bar in Pattaya">
+    <div class="sky">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="sun" aria-hidden="true"></div>
+      <h1 class="mark" aria-label="Rise">RISE</h1>
+    </div>
+    <div class="sea">
+      <div class="shimmer" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p>Restaurant and bar in Pattaya.<span>From the team behind Beer Hubb.</span></p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="#book">Book a table</a>
+          <a class="btn btn--ghost" href="#menu">See the menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="story">
+    <div class="wrap story-grid">
+      <div>
+        <h2 class="h2">A new restaurant and bar from the team behind Beer Hubb.</h2>
+        <p>Rise is built for long dinners and good company: a kitchen cooking Thai and international plates, a proper cocktail bar, and a room that works as well for two as it does for fourteen.</p>
+        <p>Book ahead, pick the table you want, and it will be waiting for you.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Open</dt><dd>Every day, 5pm to midnight</dd></div>
+        <div><dt>Where</dt><dd>Pattaya, Chon Buri</dd></div>
+        <div><dt>Bookings</dt><dd>Online, with a ฿500 table deposit that comes off your bill</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="menu" style="padding-top:0">
+    <div class="wrap">
+      <div class="menu-head">
+        <h2 class="h2" style="margin:0">On the menu</h2>
+        <a class="btn btn--ghost btn--small" href="#book">Book a table</a>
+      </div>
+      <div class="menu-grid">
+        <div>
+          <h3>Small plates</h3>
+          <div class="dish"><div class="dish-top"><span>Tom yum prawns</span><span>฿290</span></div><p>River prawns, lemongrass, roasted chilli</p></div>
+          <div class="dish"><div class="dish-top"><span>Crispy pork belly</span><span>฿260</span></div><p>Tamarind glaze, pickled shallot</p></div>
+          <div class="dish"><div class="dish-top"><span>Tuna tartare</span><span>฿320</span></div><p>Lime, bird's eye chilli, crispy rice</p></div>
+          <div class="dish"><div class="dish-top"><span>Larb chicken lettuce cups</span><span>฿240</span></div><p>Mint, toasted rice, lime</p></div>
+        </div>
+        <div>
+          <h3>From the grill</h3>
+          <div class="dish"><div class="dish-top"><span>Wagyu rump, 250g</span><span>฿1,450</span></div><p>Nam jim jaew, charred greens</p></div>
+          <div class="dish"><div class="dish-top"><span>Whole sea bass</span><span>฿690</span></div><p>Lime, garlic and chilli dressing</p></div>
+          <div class="dish"><div class="dish-top"><span>Massaman lamb shank</span><span>฿780</span></div><p>Slow-cooked, potato, roasted peanut</p></div>
+          <div class="dish"><div class="dish-top"><span>Tiger prawns</span><span>฿650</span></div><p>Garlic butter, herb rice</p></div>
+        </div>
+        <div>
+          <h3>At the bar</h3>
+          <div class="dish"><div class="dish-top"><span>Rise sour</span><span>฿320</span></div><p>Thai rum, passion fruit, lime</p></div>
+          <div class="dish"><div class="dish-top"><span>Lemongrass negroni</span><span>฿340</span></div><p>Gin, bitter aperitivo, lemongrass vermouth</p></div>
+          <div class="dish"><div class="dish-top"><span>Draught beer, pint</span><span>฿140</span></div><p>Ask what's on tap tonight</p></div>
+          <div class="dish"><div class="dish-top"><span>House wine, glass</span><span>฿220</span></div><p>Red, white or rosé</p></div>
+        </div>
+      </div>
+      <p class="menu-note">Prices in Thai baht. Full menu on the night.</p>
+    </div>
+  </section>
+
+  <section class="section book" id="book">
+    <div class="wrap">
+      <div class="book-head">
+        <h2 class="h2">Book a table</h2>
+        <p class="lede">Pick your night, see which tables are free, and choose where you sit. A deposit holds your table and comes off the bill.</p>
+      </div>
+
+      <form class="book-grid" id="bookForm" novalidate>
+        <div class="panel book-a">
+          <fieldset class="step">
+            <legend><span class="step-n">1</span>When</legend>
+            <div class="chips" id="dates" role="radiogroup" aria-label="Date"></div>
+            <div class="times" id="times" role="radiogroup" aria-label="Time" style="margin-top:12px"></div>
+          </fieldset>
+          <fieldset class="step">
+            <legend><span class="step-n">2</span>Guests</legend>
+            <div class="stepper">
+              <button type="button" id="gMinus" aria-label="Fewer guests">&minus;</button>
+              <output id="gCount" aria-live="polite">2 guests</output>
+              <button type="button" id="gPlus" aria-label="More guests">+</button>
+            </div>
+            <p class="g-note" id="gNote"></p>
+          </fieldset>
+        </div>
+
+        <div class="plan-wrap">
+          <div class="plan-card">
+            <div class="plan-top">
+              <h3>Floor plan</h3>
+              <span class="plan-ctx" id="planCtx"></span>
+            </div>
+            <ul class="legend">
+              <li><i></i>Free</li>
+              <li><i class="lg-sel"></i>Your table</li>
+              <li><i class="lg-booked"></i>Booked</li>
+              <li><i class="lg-nofit"></i>Not sized for your group</li>
+            </ul>
+            <div class="plan-scroll"><svg id="plan" viewBox="0 0 1000 640" role="group" aria-label="Rise floor plan"></svg></div>
+            <p class="plan-status" id="planStatus" aria-live="polite"></p>
+            <div class="free" id="freeList"></div>
+          </div>
+        </div>
+
+        <div class="panel book-b">
+          <fieldset class="step">
+            <legend><span class="step-n">3</span>Table</legend>
+            <div class="picked" id="picked"><span class="picked-badge" id="pickedBadge">?</span><span id="pickedText">Choose a highlighted table on the plan.</span></div>
+          </fieldset>
+          <fieldset class="step">
+            <legend><span class="step-n">4</span>Your details</legend>
+            <div class="field"><label for="fName">Name</label><input id="fName" name="name" autocomplete="name" required><span class="err" id="eName"></span></div>
+            <div class="field-row">
+              <div class="field"><label for="fPhone">Phone or WhatsApp</label><input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+66" required><span class="err" id="ePhone"></span></div>
+              <div class="field"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" autocomplete="email" required><span class="err" id="eEmail"></span></div>
+            </div>
+            <div class="field"><label for="fNotes">Anything we should know? (optional)</label><textarea id="fNotes" name="notes" placeholder="Birthday, high chair, allergies"></textarea></div>
+          </fieldset>
+
+          <div class="summary" aria-live="polite">
+            <div class="sum-row"><span>Table</span><span id="sumTable">Not chosen yet</span></div>
+            <div class="sum-row"><span>When</span><span id="sumWhen"></span></div>
+            <div class="sum-row"><span>Guests</span><span id="sumGuests"></span></div>
+            <div class="sum-row sum-total"><span>Deposit today</span><span id="sumDep"></span></div>
+            <p class="sum-note" id="sumNote"></p>
+          </div>
+
+          <div class="pay" role="radiogroup" aria-label="Pay with">
+            <label class="pay-opt"><input type="radio" name="pay" value="card" checked><span class="pay-t">Card</span><span class="pay-d">Visa, Mastercard, JCB, Amex, UnionPay</span></label>
+            <label class="pay-opt"><input type="radio" name="pay" value="promptpay"><span class="pay-t">PromptPay QR</span><span class="pay-d">Scan with any Thai banking app</span></label>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit" id="payBtn">Pay deposit</button>
+          <p class="form-msg" id="formMsg" role="alert"></p>
+          <p class="fine">Your deposit comes off the bill on the night. Cancel at least 24 hours ahead for a full refund. Payments are handled securely by Stripe and go straight to Rise.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section" id="visit">
+    <div class="wrap">
+      <h2 class="h2">Find us</h2>
+      <div class="visit-grid">
+        <div>
+          <h3>Address</h3>
+          <p>Address to follow<br>Pattaya, Chon Buri 20150</p>
+          <a class="btn btn--ghost btn--small" href="https://www.google.com/maps/search/?api=1&amp;query=Rise%20Pattaya" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+        <div>
+          <h3>Opening hours</h3>
+          <ul class="hours">
+            <li><span>Monday to Thursday</span><span>17:00 to 00:00</span></li>
+            <li><span>Friday and Saturday</span><span>17:00 to 01:00</span></li>
+            <li><span>Sunday</span><span>17:00 to 00:00</span></li>
+            <li><span>Last table bookings</span><span>21:30</span></li>
+          </ul>
+        </div>
+        <div class="contact">
+          <h3>Get in touch</h3>
+          <p>For groups over 14, private hire or anything else, message us on Instagram.</p>
+          <a class="btn btn--ghost btn--small" href="https://www.instagram.com/rise.pattaya" target="_blank" rel="noopener">Message @rise.pattaya</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span class="brand">RISE</span>
+    <span>From the team behind Beer Hubb. &copy; <span id="yr">2026</span> Rise Pattaya.</span>
+    <span><a href="https://www.instagram.com/rise.pattaya" target="_blank" rel="noopener">Instagram</a> &nbsp; <a href="#staff">Staff</a> &nbsp; Site by <a href="https://aiengineered.co.uk" target="_blank" rel="noopener">AiEngineered</a></span>
+  </div>
+</footer>
+</div>
+
+<section class="staff" id="staff" hidden aria-label="Staff bookings view">
+  <div class="wrap staff-top">
+    <h1><span class="brand" style="font-size:20px">RISE</span><span>Bookings</span></h1>
+    <div class="daynav">
+      <button type="button" id="sPrev" aria-label="Previous day">&lsaquo;</button>
+      <strong id="sDay"></strong>
+      <button type="button" id="sNext" aria-label="Next day">&rsaquo;</button>
+    </div>
+    <a class="btn btn--ghost btn--small" href="#top">Back to website</a>
+  </div>
+  <div class="wrap">
+    <div class="stats" id="stats"></div>
+    <h2>Tables through the night</h2>
+    <div class="tl-scroll"><div class="tl" id="timeline"></div></div>
+    <ul class="tl-key"><li><i></i>Booked online, deposit paid</li><li><i class="k-phone"></i>Phone or walk-in hold, no deposit</li></ul>
+    <div class="detail" id="detail" hidden></div>
+
+    <div class="floor">
+      <div class="plan-card">
+        <div class="floor-ctrl">
+          <label for="sTime">Floor at</label>
+          <input type="range" id="sTime" min="1020" max="1410" step="30" value="1170">
+          <output id="sTimeOut" for="sTime">19:30</output>
+        </div>
+        <ul class="legend"><li><i class="lg-occ"></i>Seated</li><li><i></i>Empty</li></ul>
+        <div class="plan-scroll"><svg id="staffPlan" viewBox="0 0 1000 640" role="group" aria-label="Floor plan for staff"></svg></div>
+        <p class="plan-status" id="staffStatus" aria-live="polite"></p>
+      </div>
+      <div>
+        <h2 id="seatedHead">Seated</h2>
+        <ul class="seated" id="seated"></ul>
+      </div>
+    </div>
+    <p class="fine" style="margin-top:32px">This view uses sample bookings. In the live version it sits behind a staff login and fills with real bookings as they come in.</p>
+  </div>
+</section>
+
+<aside class="preview" id="preview" aria-label="Preview notice">
+  <p><strong>Preview.</strong> <span class="pv-long">Menu, hours, address and table layout are samples. </span>Payments run in demo mode. <a href="#staff">Open staff view</a></p>
+  <button type="button" id="previewX" aria-label="Hide preview notice">&times;</button>
+</aside>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button type="button" class="modal-x" id="modalX" aria-label="Close">&times;</button>
+    <div id="mBody"></div>
+  </div>
+</div>
+
+<script>
+(() => {
+  'use strict';
+
+  /* ---------- Config ---------- */
+  const OPEN = 17 * 60, CLOSE = 24 * 60, LAST = 21 * 60 + 30, STEP = 30;
+  const MAX_GUESTS = 14, DEPOSIT = 500, GROUP_FROM = 7;
+  const SLOTS = []; for (let t = OPEN; t <= LAST; t += STEP) SLOTS.push(t);
+
+  const TABLES = [
+    ...[0,1,2,3,4,5].map(i => ({ id: 'T' + (i+1), kind: 'Terrace table', shape: 'round', cap: 2, x: 110 + i*140, y: 85 })),
+    ...[0,1,2,3,4,5].map(i => ({ id: 'D' + (i+1), kind: 'Dining table', shape: 'square', cap: 4, x: 270 + (i%3)*140, y: i < 3 ? 235 : 370 })),
+    ...[0,1,2].map(i => ({ id: 'B' + (i+1), kind: 'Booth', shape: 'booth', cap: 6, x: 255 + i*150, y: 515 })),
+    { id: 'L1', kind: 'Lounge table', shape: 'lounge', cap: 8, x: 700, y: 330 },
+    { id: 'G1', kind: 'Long table', shape: 'long', cap: 14, x: 95, y: 385 },
+  ];
+  const byId = Object.fromEntries(TABLES.map(t => [t.id, t]));
+
+  /* ---------- Helpers ---------- */
+  const $ = (s, el = document) => el.querySelector(s);
+  const pad = n => String(n).padStart(2, '0');
+  const fmtTime = m => pad(Math.floor(m / 60) % 24) + ':' + pad(m % 60);
+  const baht = n => '฿' + n.toLocaleString('en-US');
+  const depositFor = g => g >= GROUP_FROM ? DEPOSIT * g : DEPOSIT;
+  const durFor = g => g >= GROUP_FROM ? 150 : 120;
+  const fits = (cap, g) => cap >= g && cap - g <= Math.max(2, Math.ceil(g * 0.75));
+  const guestsLabel = g => g + (g === 1 ? ' guest' : ' guests');
+  const DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  function seedFrom(str) {
+    let h = 1779033703 ^ str.length;
+    for (let i = 0; i < str.length; i++) { h = Math.imul(h ^ str.charCodeAt(i), 3432918353); h = h << 13 | h >>> 19; }
+    h = Math.imul(h ^ (h >>> 16), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909);
+    return (h ^= h >>> 16) >>> 0;
+  }
+  function rng(seed) {
+    let a = seedFrom(seed);
+    return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  }
+
+  // Bangkok time (UTC+7), read with UTC getters
+  const bkkNow = () => new Date(Date.now() + 7 * 3600 * 1000);
+  const nowMin = () => { const d = bkkNow(); return d.getUTCHours() * 60 + d.getUTCMinutes(); };
+  const parseKey = k => new Date(k + 'T00:00:00Z');
+  const shiftKey = (k, n) => { const d = parseKey(k); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
+  const todayKey = bkkNow().toISOString().slice(0, 10);
+  const dayLabel = k => { const d = parseKey(k); return DOW[d.getUTCDay()] + ' ' + d.getUTCDate() + ' ' + MON[d.getUTCMonth()]; };
+
+  /* ---------- Sample bookings (stand-in for the live database) ---------- */
+  const NAMES = ['Somchai K.','Emma R.','Nattaya P.','James W.','Pim S.','Oliver T.','Kanya L.','Daniel M.','Arthit C.','Sophie H.','Chen W.','Lukas B.','Ploy J.','Mark D.','Anong T.','Hiroshi N.','Sarah G.','Tom F.','Mali R.','Chris P.'];
+  const sampleCache = {};
+  const userBookings = {};
+  const makeRef = r => 'RISE-' + Array.from({length: 4}, () => '23456789ABCDEFGHJKLMNPQRSTUVWXYZ'[Math.floor(r() * 32)]).join('');
+
+  function sampleBookings(key) {
+    if (sampleCache[key]) return sampleCache[key];
+    const dow = parseKey(key).getUTCDay();
+    const base = [0.09, 0.05, 0.06, 0.07, 0.09, 0.15, 0.17][dow];
+    const list = [];
+    TABLES.forEach(tb => {
+      const r = rng(key + tb.id);
+      let t = OPEN + (r() < 0.5 ? 0 : 30);
+      while (t <= LAST) {
+        const peak = (t >= 18 * 60 + 30 && t <= 20 * 60 + 30) ? 1.6 : 1;
+        if (r() < base * peak) {
+          const opts = []; for (let g = 1; g <= tb.cap; g++) if (fits(tb.cap, g)) opts.push(g);
+          const g = opts[Math.floor(r() * opts.length)];
+          const dur = durFor(g);
+          const online = r() < 0.72;
+          list.push({ ref: makeRef(r), table: tb.id, start: t, dur, guests: g, name: NAMES[Math.floor(r() * NAMES.length)],
+            source: online ? 'online' : 'phone', deposit: online ? depositFor(g) : 0,
+            phone: '+66 8' + Math.floor(r() * 10) + ' xxx ' + (1000 + Math.floor(r() * 9000)) });
+          t += dur + 30;
+        } else t += 30;
+      }
+    });
+    return (sampleCache[key] = list);
+  }
+  const bookingsFor = key => sampleBookings(key).concat(userBookings[key] || []);
+  const isFree = (tid, key, start, dur) => !bookingsFor(key).some(b => b.table === tid && b.start < start + dur && start < b.start + b.dur);
+  const slotPassed = (key, slot) => key === todayKey && slot < nowMin() + 30;
+  const freeTables = (key, slot, g) => TABLES.filter(tb => fits(tb.cap, g) && isFree(tb.id, key, slot, durFor(g)));
+
+  /* ---------- Floor plan drawing ---------- */
+  function tableShape(tb) {
+    const { x, y, shape } = tb;
+    let body = '', seats = '';
+    if (shape === 'round') {
+      body = `<circle class="tb-top" cx="${x}" cy="${y}" r="24"/>`;
+      seats = [-1, 1].map(s => `<circle class="seat" cx="${x + s * 38}" cy="${y}" r="8"/>`).join('');
+    } else if (shape === 'square') {
+      body = `<rect class="tb-top" x="${x - 30}" y="${y - 30}" width="60" height="60" rx="8"/>`;
+      seats = [[0,-42,24,9],[0,42,24,9],[-42,0,9,24],[42,0,9,24]].map(([dx,dy,w,h]) => `<rect class="seat" x="${x + dx - w/2}" y="${y + dy - h/2}" width="${w}" height="${h}" rx="4"/>`).join('');
+    } else if (shape === 'booth') {
+      body = `<rect class="tb-top" x="${x - 58}" y="${y - 22}" width="116" height="44" rx="8"/>`;
+      seats = `<rect class="seat" x="${x - 58}" y="${y - 44}" width="116" height="14" rx="6"/><rect class="seat" x="${x - 58}" y="${y + 30}" width="116" height="14" rx="6"/>`;
+    } else if (shape === 'lounge') {
+      body = `<circle class="tb-top" cx="${x}" cy="${y}" r="40"/>`;
+      seats = Array.from({ length: 8 }, (_, i) => { const a = i / 8 * Math.PI * 2 + Math.PI / 8; return `<circle class="seat" cx="${(x + Math.cos(a) * 60).toFixed(1)}" cy="${(y + Math.sin(a) * 60).toFixed(1)}" r="9"/>`; }).join('');
+    } else if (shape === 'long') {
+      body = `<rect class="tb-top" x="${x - 27}" y="${y - 150}" width="54" height="300" rx="10"/>`;
+      for (let i = 0; i < 6; i++) { const yy = y - 125 + i * 50; seats += `<rect class="seat" x="${x - 45}" y="${yy - 12}" width="9" height="24" rx="4"/><rect class="seat" x="${x + 36}" y="${yy - 12}" width="9" height="24" rx="4"/>`; }
+      seats += `<rect class="seat" x="${x - 12}" y="${y - 166}" width="24" height="9" rx="4"/><rect class="seat" x="${x - 12}" y="${y + 157}" width="24" height="9" rx="4"/>`;
+    }
+    return { body, seats, label: `<text class="tb-id" x="${x}" y="${y + 6}">${tb.id}</text>` };
+  }
+
+  function roomMarkup(hatchId) {
+    let stools = '';
+    for (let i = 0; i < 7; i++) stools += `<circle class="stool" cx="835" cy="${348 + i * 35}" r="10"/>`;
+    return `
+      <defs><pattern id="${hatchId}" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="9" height="9" fill="#141B3B"/><line x1="0" y1="0" x2="0" y2="9" stroke="#3B4889" stroke-width="3"/></pattern></defs>
+      <rect class="room" x="20" y="20" width="960" height="580" rx="18"/>
+      <line class="glass" x1="20" y1="150" x2="980" y2="150"/>
+      <text class="zone" x="958" y="90" text-anchor="end">Terrace</text>
+      <text class="zone" x="40" y="182">Dining room</text>
+      <rect class="fixture" x="800" y="172" width="160" height="104" rx="10"/>
+      <text class="zone zone--c" x="880" y="229">Kitchen</text>
+      <rect class="fixture" x="860" y="324" width="40" height="252" rx="8"/>
+      ${stools}
+      <text class="zone zone--c" x="940" y="444">Bar</text>
+      <text class="zone zone--c" x="940" y="466" style="font-size:14px">walk-ins</text>
+      <rect class="gap" x="664" y="590" width="84" height="20"/>
+      <text class="zone zone--c" x="706" y="632" style="font-size:16px">Entrance</text>`;
+  }
+
+  function drawPlan(svg, hatchId, stateOf, labelOf, interactive) {
+    let out = roomMarkup(hatchId);
+    TABLES.forEach(tb => {
+      const st = stateOf(tb);
+      const { body, seats, label } = tableShape(tb);
+      const top = st === 'booked' ? body.replace('class="tb-top"', `class="tb-top" fill="url(#${hatchId})"`) : body;
+      const focusable = interactive && (st === 'free' || st === 'selected');
+      out += `<g class="tb tb--${st}${interactive ? '' : ' tb--staff'}" data-id="${tb.id}" ${focusable ? `tabindex="0" role="button" aria-pressed="${st === 'selected'}"` : 'tabindex="-1"'} aria-label="${labelOf(tb, st)}">${seats}${top}${label}</g>`;
+    });
+    svg.innerHTML = out;
+  }
+
+  /* ---------- Booking state ---------- */
+  const S = { key: todayKey, start: 19 * 60, guests: 2, table: null };
+  if (nowMin() > LAST - 30) S.key = shiftKey(todayKey, 1);
+
+  function pickStart(pref) {
+    const order = SLOTS.slice().sort((a, b) => Math.abs(a - pref) - Math.abs(b - pref));
+    return order.find(s => !slotPassed(S.key, s) && freeTables(S.key, s, S.guests).length) ??
+           order.find(s => !slotPassed(S.key, s)) ?? SLOTS[SLOTS.length - 1];
+  }
+  S.start = pickStart(19 * 60);
+
+  const els = {
+    dates: $('#dates'), times: $('#times'), gMinus: $('#gMinus'), gPlus: $('#gPlus'), gCount: $('#gCount'), gNote: $('#gNote'),
+    plan: $('#plan'), planCtx: $('#planCtx'), planStatus: $('#planStatus'), freeList: $('#freeList'),
+    picked: $('#picked'), pickedBadge: $('#pickedBadge'), pickedText: $('#pickedText'),
+    sumTable: $('#sumTable'), sumWhen: $('#sumWhen'), sumGuests: $('#sumGuests'), sumDep: $('#sumDep'), sumNote: $('#sumNote'),
+    form: $('#bookForm'), payBtn: $('#payBtn'), formMsg: $('#formMsg'),
+  };
+
+  function guestState(tb) {
+    if (!fits(tb.cap, S.guests)) return 'nofit';
+    if (!isFree(tb.id, S.key, S.start, durFor(S.guests))) return 'booked';
+    return tb.id === S.table ? 'selected' : 'free';
+  }
+  function guestLabel(tb, st) {
+    const end = fmtTime(S.start + durFor(S.guests));
+    const base = `${tb.kind} ${tb.id}, seats ${tb.cap}.`;
+    if (st === 'selected') return `${base} Your table, ${fmtTime(S.start)} to ${end}.`;
+    if (st === 'free') return `${base} Free from ${fmtTime(S.start)} to ${end}.`;
+    if (st === 'booked') return `${base} Booked at this time.`;
+    return tb.cap < S.guests ? `${base} Too small for ${guestsLabel(S.guests)}.` : `${base} Kept for bigger groups.`;
+  }
+
+  function renderDates() {
+    let html = '';
+    for (let i = 0; i < 14; i++) {
+      const k = shiftKey(todayKey, i), d = parseKey(k);
+      const top = i === 0 ? 'Today' : i === 1 ? 'Tomorrow' : DOW[d.getUTCDay()];
+      const off = i === 0 && nowMin() > LAST - 30;
+      html += `<button type="button" class="chip" role="radio" aria-checked="${k === S.key}" data-key="${k}" ${off ? 'disabled' : ''}>${top}<small>${d.getUTCDate()} ${MON[d.getUTCMonth()]}</small></button>`;
+    }
+    els.dates.innerHTML = html;
+  }
+
+  function renderTimes() {
+    els.times.innerHTML = SLOTS.map(s => {
+      const passed = slotPassed(S.key, s);
+      const n = passed ? 0 : freeTables(S.key, s, S.guests).length;
+      const sub = passed ? 'Passed' : n ? n + ' free' : 'Full';
+      return `<button type="button" class="chip" role="radio" aria-checked="${s === S.start}" data-slot="${s}" ${passed || !n ? 'disabled' : ''} aria-label="${fmtTime(s)}, ${sub}">${fmtTime(s)}<small>${sub}</small></button>`;
+    }).join('');
+  }
+
+  function renderGuests() {
+    els.gCount.textContent = guestsLabel(S.guests);
+    els.gMinus.disabled = S.guests <= 1;
+    els.gPlus.disabled = S.guests >= MAX_GUESTS;
+    els.gNote.textContent = S.guests >= MAX_GUESTS
+      ? 'Bigger group? Message us on Instagram and we will set it up.'
+      : S.guests >= GROUP_FROM ? 'Groups of 7 or more pay a ฿500 deposit per guest.' : 'Up to 6 guests: one ฿500 deposit holds the table.';
+  }
+
+  function renderPlan() {
+    drawPlan(els.plan, 'hatch-g', guestState, guestLabel, true);
+    els.planCtx.textContent = `${dayLabel(S.key)}, ${fmtTime(S.start)}, ${guestsLabel(S.guests)}`;
+    const free = freeTables(S.key, S.start, S.guests);
+    if (S.table) {
+      els.planStatus.textContent = guestLabel(byId[S.table], 'selected');
+    } else {
+      els.planStatus.textContent = free.length ? 'Tap a highlighted table to choose it.' : '';
+    }
+    if (free.length) {
+      els.freeList.innerHTML = `<p>Free for ${guestsLabel(S.guests)} at ${fmtTime(S.start)}</p><div class="chips">` +
+        free.map(tb => `<button type="button" class="chip" data-pick="${tb.id}" aria-checked="${tb.id === S.table}" role="radio">${tb.id}<small>${tb.kind}, ${tb.cap} seats</small></button>`).join('') + '</div>';
+    } else {
+      const alt = SLOTS.filter(s => !slotPassed(S.key, s) && freeTables(S.key, s, S.guests).length)
+        .sort((a, b) => Math.abs(a - S.start) - Math.abs(b - S.start))[0];
+      els.freeList.innerHTML = alt !== undefined
+        ? `<p>Nothing free for ${guestsLabel(S.guests)} at ${fmtTime(S.start)}. ${fmtTime(alt)} has space.</p><button type="button" class="btn btn--ghost btn--small" data-alt="${alt}">Switch to ${fmtTime(alt)}</button>`
+        : `<p>Nothing free for ${guestsLabel(S.guests)} on ${dayLabel(S.key)}. Try another night.</p>`;
+    }
+  }
+
+  function renderPicked() {
+    const tb = S.table && byId[S.table];
+    els.picked.classList.toggle('is-set', !!tb);
+    els.pickedBadge.textContent = tb ? tb.id : '?';
+    els.pickedText.textContent = tb ? `${tb.kind}, seats ${tb.cap}. Held for you from ${fmtTime(S.start)} to ${fmtTime(S.start + durFor(S.guests))}.` : 'Choose a highlighted table on the plan.';
+  }
+
+  function renderSummary() {
+    const dep = depositFor(S.guests);
+    els.sumTable.textContent = S.table ? `${byId[S.table].kind} ${S.table}` : 'Not chosen yet';
+    els.sumWhen.textContent = `${dayLabel(S.key)}, ${fmtTime(S.start)}`;
+    els.sumGuests.textContent = guestsLabel(S.guests);
+    els.sumDep.textContent = baht(dep);
+    els.sumNote.textContent = S.guests >= GROUP_FROM
+      ? `${S.guests} guests × ${baht(DEPOSIT)}. Comes off your bill on the night.`
+      : `One ${baht(DEPOSIT)} deposit for tables up to 6. Comes off your bill on the night.`;
+    els.payBtn.textContent = `Pay ${baht(dep)} deposit`;
+  }
+
+  function validateTable() {
+    if (S.table && guestState(byId[S.table]) !== 'selected') S.table = null;
+  }
+
+  function renderAll() {
+    validateTable();
+    renderDates(); renderTimes(); renderGuests(); renderPlan(); renderPicked(); renderSummary();
+  }
+
+  /* ---------- Booking events ---------- */
+  els.dates.addEventListener('click', e => {
+    const b = e.target.closest('[data-key]'); if (!b || b.disabled) return;
+    S.key = b.dataset.key;
+    if (slotPassed(S.key, S.start) || !freeTables(S.key, S.start, S.guests).length) S.start = pickStart(S.start);
+    renderAll();
+  });
+  els.times.addEventListener('click', e => {
+    const b = e.target.closest('[data-slot]'); if (!b || b.disabled) return;
+    S.start = +b.dataset.slot; renderAll();
+  });
+  els.gMinus.addEventListener('click', () => { if (S.guests > 1) { S.guests--; renderAll(); } });
+  els.gPlus.addEventListener('click', () => { if (S.guests < MAX_GUESTS) { S.guests++; renderAll(); } });
+
+  function choose(id) {
+    const tb = byId[id]; if (!tb) return;
+    const st = guestState(tb);
+    if (st === 'free') S.table = id; else if (st === 'selected') S.table = null; else return;
+    els.formMsg.textContent = '';
+    renderPlan(); renderPicked(); renderSummary();
+    const g = els.plan.querySelector(`[data-id="${id}"]`); if (g && document.activeElement && document.activeElement.closest && document.activeElement.closest('#plan')) g.focus();
+  }
+  els.plan.addEventListener('click', e => { const g = e.target.closest('.tb'); if (g) choose(g.dataset.id); });
+  els.plan.addEventListener('keydown', e => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const g = e.target.closest('.tb'); if (!g) return; e.preventDefault(); choose(g.dataset.id);
+    const again = els.plan.querySelector(`[data-id="${g.dataset.id}"]`); if (again) again.focus();
+  });
+  const showHover = e => {
+    const g = e.target.closest && e.target.closest('.tb'); if (!g) return;
+    els.planStatus.textContent = g.getAttribute('aria-label');
+  };
+  els.plan.addEventListener('mouseover', showHover);
+  els.plan.addEventListener('focusin', showHover);
+  els.plan.addEventListener('mouseleave', () => renderPlanStatusOnly());
+  function renderPlanStatusOnly() {
+    els.planStatus.textContent = S.table ? guestLabel(byId[S.table], 'selected') : (freeTables(S.key, S.start, S.guests).length ? 'Tap a highlighted table to choose it.' : '');
+  }
+  els.freeList.addEventListener('click', e => {
+    const p = e.target.closest('[data-pick]'); if (p) { choose(p.dataset.pick); return; }
+    const a = e.target.closest('[data-alt]'); if (a) { S.start = +a.dataset.alt; renderAll(); }
+  });
+
+  /* ---------- Form + payment ---------- */
+  const fields = { name: $('#fName'), phone: $('#fPhone'), email: $('#fEmail') };
+  const errs = { name: $('#eName'), phone: $('#ePhone'), email: $('#eEmail') };
+  function setErr(k, msg) { errs[k].textContent = msg; fields[k].setAttribute('aria-invalid', msg ? 'true' : 'false'); }
+  Object.keys(fields).forEach(k => fields[k].addEventListener('input', () => setErr(k, '')));
+
+  function validate() {
+    let ok = true, first = null;
+    const name = fields.name.value.trim(), phone = fields.phone.value.replace(/[^\d+]/g, ''), email = fields.email.value.trim();
+    if (!name) { setErr('name', 'Add the name the booking should be under.'); ok = false; first = first || fields.name; } else setErr('name', '');
+    if (phone.replace('+', '').length < 8) { setErr('phone', 'Add a phone or WhatsApp number so we can reach you on the night.'); ok = false; first = first || fields.phone; } else setErr('phone', '');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { setErr('email', 'Add an email for your booking confirmation and receipt.'); ok = false; first = first || fields.email; } else setErr('email', '');
+    if (!S.table) { els.formMsg.textContent = 'Choose a table on the floor plan first.'; ok = false; }
+    else els.formMsg.textContent = ok ? '' : 'Check the highlighted details above.';
+    if (!S.table) { document.getElementById('book').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    else if (first) first.focus();
+    return ok;
+  }
+
+  const modal = $('#modal'), mBody = $('#mBody');
+  let lastFocus = null, pending = null;
+
+  function openModal(html) {
+    lastFocus = document.activeElement;
+    mBody.innerHTML = html; modal.hidden = false; document.body.style.overflow = 'hidden';
+    const f = mBody.querySelector('button, a'); (f || $('#modalX')).focus();
+  }
+  function closeModal() {
+    modal.hidden = true; document.body.style.overflow = ''; pending = null;
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  $('#modalX').addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+
+  function summaryDl(p) {
+    const tb = byId[p.table];
+    return `<dl class="m-dl">
+      <div><dt>Table</dt><dd>${tb.kind} ${tb.id}</dd></div>
+      <div><dt>When</dt><dd>${dayLabel(p.key)}, ${fmtTime(p.start)}</dd></div>
+      <div><dt>Guests</dt><dd>${p.guests}</dd></div>
+      <div><dt>Deposit</dt><dd>${baht(p.deposit)}</dd></div></dl>`;
+  }
+
+  function demoQR(seed) {
+    const n = 29, c = 7, r = rng(seed), q = 2;
+    const inFinder = (x, y) => [[0,0],[n-7,0],[0,n-7]].some(([fx, fy]) => x >= fx - 1 && x <= fx + 7 && y >= fy - 1 && y <= fy + 7);
+    const finderDark = (x, y) => [[0,0],[n-7,0],[0,n-7]].some(([fx, fy]) => { const dx = x - fx, dy = y - fy; if (dx < 0 || dy < 0 || dx > 6 || dy > 6) return false; return dx === 0 || dx === 6 || dy === 0 || dy === 6 || (dx >= 2 && dx <= 4 && dy >= 2 && dy <= 4); });
+    const mid = (n - 1) / 2;
+    let rects = '';
+    for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) {
+      let dark;
+      if (inFinder(x, y)) dark = finderDark(x, y);
+      else if (Math.abs(x - mid) <= 5 && Math.abs(y - mid) <= 2) dark = false;
+      else dark = r() < 0.48;
+      if (dark) rects += `<rect x="${(x + q) * c}" y="${(y + q) * c}" width="${c}" height="${c}"/>`;
+    }
+    const size = (n + q * 2) * c;
+    return `<svg viewBox="0 0 ${size} ${size}" role="img" aria-label="Demo payment QR code, not payable"><rect width="${size}" height="${size}" fill="#fff"/><g fill="#10172E">${rects}</g><text x="${size/2}" y="${size/2 + 6}" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="17" fill="#10172E" letter-spacing="2">DEMO</text></svg>`;
+  }
+
+  els.form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!validate()) return;
+    const method = els.form.querySelector('input[name="pay"]:checked').value;
+    pending = { key: S.key, start: S.start, guests: S.guests, table: S.table, deposit: depositFor(S.guests), method,
+      name: fields.name.value.trim(), phone: fields.phone.value.trim(), email: fields.email.value.trim(), notes: $('#fNotes').value.trim() };
+    if (method === 'promptpay') {
+      openModal(`<h3 id="mTitle">Scan to pay ${baht(pending.deposit)}</h3>
+        <p>Open any Thai banking app, scan the code and confirm. Your table is held for 10 minutes while you pay.</p>
+        <div class="qr">${demoQR(pending.key + pending.table + pending.start)}</div>
+        ${summaryDl(pending)}
+        <button type="button" class="btn btn--primary btn--block" data-act="paid">Simulate payment received</button>
+        <p class="fine">Preview: this is a demo code and can't be paid. On the live site Stripe shows Rise's real PromptPay code and confirms the payment automatically.</p>`);
+    } else {
+      openModal(`<h3 id="mTitle">Secure card payment</h3>
+        <p>On the live site this step opens Stripe's secure checkout. Card details go straight to Stripe and the deposit is paid into Rise's account.</p>
+        ${summaryDl(pending)}
+        <button type="button" class="btn btn--primary btn--block" data-act="paid">Simulate successful payment</button>
+        <p class="fine">Preview: no card is charged.</p>`);
+    }
+  });
+
+  mBody.addEventListener('click', e => {
+    const b = e.target.closest('[data-act]'); if (!b) return;
+    if (b.dataset.act === 'done') { closeModal(); return; }
+    if (b.dataset.act === 'paid' && pending) {
+      const p = pending;
+      if (!isFree(p.table, p.key, p.start, durFor(p.guests))) {
+        mBody.innerHTML = `<h3 id="mTitle">That table has just gone</h3><p>Someone booked ${p.table} a moment ago. Pick another free table and you won't be charged twice.</p><button type="button" class="btn btn--primary btn--block" data-act="done">Choose another table</button>`;
+        S.table = null; renderAll(); return;
+      }
+      const ref = makeRef(rng(String(Date.now())));
+      (userBookings[p.key] = userBookings[p.key] || []).push({ ref, table: p.table, start: p.start, dur: durFor(p.guests), guests: p.guests, name: p.name, source: 'online', deposit: p.deposit, phone: p.phone, isNew: true });
+      mBody.innerHTML = `<div class="tick" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10172E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h3 id="mTitle">Table booked</h3>
+        <p>Booking reference <span class="ref">${ref}</span></p>
+        ${summaryDl(p)}
+        <p>Your ${baht(p.deposit)} comes off the bill on the night. Need to cancel? Do it at least 24 hours ahead for a full refund. A confirmation goes to ${p.email.replace(/</g, '&lt;')}.</p>
+        <button type="button" class="btn btn--primary btn--block" data-act="done">Done</button>
+        <p class="fine">Preview: no email is sent. The booking now shows in the staff view.</p>`;
+      mBody.querySelector('[data-act="done"]').focus();
+      S.table = null; pending = null;
+      els.form.reset();
+      renderAll();
+    }
+  });
+
+  /* ---------- Staff view ---------- */
+  const staff = { key: S.key, time: 19 * 60 + 30, sel: null };
+  const sEls = { day: $('#sDay'), stats: $('#stats'), tl: $('#timeline'), detail: $('#detail'), plan: $('#staffPlan'), status: $('#staffStatus'), time: $('#sTime'), timeOut: $('#sTimeOut'), seated: $('#seated'), seatedHead: $('#seatedHead') };
+  const seatedAt = (key, t) => bookingsFor(key).filter(b => b.start <= t && t < b.start + b.dur);
+
+  function renderStaff() {
+    const key = staff.key, bs = bookingsFor(key);
+    sEls.day.textContent = (key === todayKey ? 'Today, ' : '') + dayLabel(key);
+    const covers = bs.reduce((a, b) => a + b.guests, 0);
+    const deps = bs.reduce((a, b) => a + b.deposit, 0);
+    let busy = OPEN, busyN = -1;
+    for (let t = OPEN; t < CLOSE; t += STEP) { const n = seatedAt(key, t).reduce((a, b) => a + b.guests, 0); if (n > busyN) { busyN = n; busy = t; } }
+    sEls.stats.innerHTML = `
+      <div class="stat"><b>${bs.length}</b><span>Bookings</span></div>
+      <div class="stat"><b>${covers}</b><span>Guests</span></div>
+      <div class="stat"><b>${baht(deps)}</b><span>Deposits held</span></div>
+      <div class="stat"><b>${fmtTime(busy)}</b><span>Busiest, ${busyN} seated</span></div>`;
+
+    const span = CLOSE - OPEN;
+    const pct = m => ((m - OPEN) / span * 100).toFixed(3) + '%';
+    let html = '<div class="tl-row tl-head"><div class="tl-label"></div><div class="tl-track">';
+    for (let h = OPEN; h <= CLOSE; h += 60) html += `<span style="left:${pct(h)}">${fmtTime(h)}</span>`;
+    html += '</div></div>';
+    const showNow = key === todayKey && nowMin() >= OPEN && nowMin() < CLOSE;
+    TABLES.forEach(tb => {
+      html += `<div class="tl-row"><div class="tl-label"><strong>${tb.id}</strong><span>${tb.cap} seats</span></div><div class="tl-track">`;
+      if (showNow) html += `<i class="tl-now" style="left:${pct(nowMin())}"></i>`;
+      bs.filter(b => b.table === tb.id).sort((a, b) => a.start - b.start).forEach(b => {
+        const w = (Math.min(b.dur, CLOSE - b.start) / span * 100).toFixed(3) + '%';
+        html += `<button type="button" class="tl-bar tl-bar--${b.source}${b.isNew ? ' tl-bar--new' : ''}" style="left:${pct(b.start)};width:${w}" data-ref="${b.ref}" aria-pressed="${staff.sel === b.ref}" aria-label="${b.name}, ${guestsLabel(b.guests)}, ${tb.id}, ${fmtTime(b.start)} to ${fmtTime(b.start + b.dur)}"><span>${b.name.replace(/</g, '&lt;')}</span><span>${b.guests}</span></button>`;
+      });
+      html += '</div></div>';
+    });
+    sEls.tl.innerHTML = html;
+    renderDetail();
+    renderStaffFloor();
+  }
+
+  function renderDetail() {
+    const b = staff.sel && bookingsFor(staff.key).find(x => x.ref === staff.sel);
+    if (!b) { sEls.detail.hidden = true; return; }
+    const tb = byId[b.table];
+    sEls.detail.hidden = false;
+    sEls.detail.innerHTML = `<h3>${b.name.replace(/</g, '&lt;')}, ${guestsLabel(b.guests)}</h3><dl>
+      <div><dt>Table</dt><dd>${tb.kind} ${tb.id}</dd></div>
+      <div><dt>Time</dt><dd>${fmtTime(b.start)} to ${fmtTime(b.start + b.dur)}</dd></div>
+      <div><dt>Deposit</dt><dd>${b.deposit ? baht(b.deposit) + ' paid, take off bill' : 'None, phone booking'}</dd></div>
+      <div><dt>Phone</dt><dd>${b.phone.replace(/</g, '&lt;')}</dd></div>
+      <div><dt>Reference</dt><dd>${b.ref}</dd></div></dl>`;
+  }
+
+  function renderStaffFloor() {
+    const t = staff.time, seated = seatedAt(staff.key, t);
+    const at = Object.fromEntries(seated.map(b => [b.table, b]));
+    sEls.time.value = t; sEls.timeOut.textContent = fmtTime(t);
+    drawPlan(sEls.plan, 'hatch-s', tb => at[tb.id] ? 'occupied' : 'empty',
+      tb => at[tb.id] ? `${tb.id}: ${at[tb.id].name}, ${guestsLabel(at[tb.id].guests)}, until ${fmtTime(at[tb.id].start + at[tb.id].dur)}` : `${tb.id}: empty at ${fmtTime(t)}`, false);
+    sEls.status.textContent = `${seated.length} of ${TABLES.length} tables seated at ${fmtTime(t)}, ${seated.reduce((a, b) => a + b.guests, 0)} guests.`;
+    sEls.seatedHead.textContent = `Seated at ${fmtTime(t)}`;
+    sEls.seated.innerHTML = seated.length
+      ? seated.sort((a, b) => a.table.localeCompare(b.table, 'en', { numeric: true })).map(b => `<li><b>${b.table}</b><span>${b.name.replace(/</g, '&lt;')}, ${b.guests}</span><span>to ${fmtTime(b.start + b.dur)}</span></li>`).join('')
+      : '<li class="empty">No one seated at this time.</li>';
+  }
+
+  $('#sPrev').addEventListener('click', () => { staff.key = shiftKey(staff.key, -1); staff.sel = null; renderStaff(); });
+  $('#sNext').addEventListener('click', () => { staff.key = shiftKey(staff.key, 1); staff.sel = null; renderStaff(); });
+  sEls.time.addEventListener('input', () => { staff.time = +sEls.time.value; renderStaffFloor(); });
+  sEls.tl.addEventListener('click', e => {
+    const b = e.target.closest('[data-ref]'); if (!b) return;
+    staff.sel = staff.sel === b.dataset.ref ? null : b.dataset.ref;
+    sEls.tl.querySelectorAll('[data-ref]').forEach(x => x.setAttribute('aria-pressed', x.dataset.ref === staff.sel));
+    renderDetail();
+  });
+  sEls.plan.addEventListener('mouseover', e => { const g = e.target.closest && e.target.closest('.tb'); if (g) sEls.status.textContent = g.getAttribute('aria-label'); });
+
+  /* ---------- Routing, nav, preview ---------- */
+  function route() {
+    const isStaff = location.hash === '#staff';
+    const wasStaff = document.body.classList.contains('is-staff');
+    document.body.classList.toggle('is-staff', isStaff);
+    $('#site').hidden = isStaff;
+    $('#staff').hidden = !isStaff;
+    if (isStaff) {
+      const n = nowMin();
+      staff.time = staff.key === todayKey && n >= OPEN && n < CLOSE - 30 ? Math.floor(n / 30) * 30 : 19 * 60 + 30;
+      renderStaff(); window.scrollTo(0, 0);
+    } else if (wasStaff) {
+      renderAll();
+      const target = location.hash && document.getElementById(location.hash.slice(1));
+      if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
+    }
+  }
+  window.addEventListener('hashchange', route);
+
+  const nav = $('#nav');
+  const pv = $('#preview');
+  const onScroll = () => { nav.classList.toggle('is-solid', window.scrollY > 40); pv.classList.toggle('is-on', window.scrollY > window.innerHeight * 0.6); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  $('#previewX').addEventListener('click', () => { $('#preview').hidden = true; try { sessionStorage.setItem('rise-preview-hidden', '1'); } catch (_) {} });
+  try { if (sessionStorage.getItem('rise-preview-hidden')) $('#preview').hidden = true; } catch (_) {}
+  $('#yr').textContent = bkkNow().getUTCFullYear();
+
+  renderAll();
+  route();
+
+  // exposed for tests
+  window.__rise = { S, TABLES, depositFor, fits, freeTables, bookingsFor, isFree, staff };
+})();
+</script>
+</body>
+</html>
