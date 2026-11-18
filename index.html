@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Cormorant+Garamond:wght@400..700&family=Anuphan:wght@400;500;600&family=Noto+Serif+Thai:wght@400..700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/sunset.avif" type="image/avif">
+<link rel="preload" as="image" href="img/moon-1200.avif" imagesrcset="img/moon-640.avif 640w, img/moon-1200.avif 1200w" imagesizes="(max-width:900px) 66vw, 40vw" type="image/avif">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Restaurant","name":"RISE Rooftop","alternateName":["RISE Rooftop by Beer Hubb","RISE Pattaya"],"url":"https://rise.aiengineered.co.uk/","image":"https://rise.aiengineered.co.uk/img/og.jpg",
 "address":{"@type":"PostalAddress","streetAddress":"Central Pattaya, Pattaya Beach Road","addressLocality":"Pattaya","addressRegion":"Chon Buri","addressCountry":"TH"},
@@ -90,7 +90,7 @@ h1,h2,h3{margin:0}
 .stars{position:absolute;inset:0;width:100%;height:100%}
 .moon-wrap{position:absolute;left:69%;bottom:0;width:min(40vw,580px);aspect-ratio:1;transform:translate(-50%,22%);animation:moonrise 3.6s cubic-bezier(.16,.8,.24,1) .15s both}
 .moon-wrap::before{content:"";position:absolute;inset:-42%;border-radius:50%;background:radial-gradient(circle,rgba(255,176,110,.34) 0%,rgba(255,150,90,.12) 38%,transparent 62%)}
-.moon{position:relative;width:100%;height:100%;filter:drop-shadow(0 0 40px rgba(255,170,100,.35))}
+.moon{position:relative;display:block;width:100%;height:100%;filter:drop-shadow(0 0 46px rgba(255,170,100,.38))}
 .hills{position:absolute;left:0;right:0;bottom:0;width:100%;height:4.5%;z-index:2;opacity:.9}
 .sky::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;z-index:3;background:linear-gradient(90deg,transparent 5%,rgba(245,217,164,.5) 40%,rgba(255,226,178,.95) 69%,rgba(245,217,164,.4) 90%,transparent)}
 .sea{position:absolute;left:0;right:0;top:var(--hz);bottom:0;overflow:hidden;background:linear-gradient(180deg,#171A3E 0%,#0C1129 38%,#060918 100%)}
@@ -443,20 +443,7 @@ body.is-staff .nav,body.is-staff .preview{display:none}
     <div class="sky" aria-hidden="true">
       <svg class="stars" id="stars" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice"></svg>
       <div class="moon-wrap">
-        <svg class="moon" viewBox="0 0 400 400">
-          <defs>
-            <radialGradient id="mg" cx="42%" cy="36%" r="72%"><stop offset="0" stop-color="#FFEBC6"/><stop offset=".42" stop-color="#F8C27E"/><stop offset=".78" stop-color="#E28C48"/><stop offset="1" stop-color="#B45F2B"/></radialGradient>
-            <radialGradient id="ms" cx="50%" cy="50%" r="50%"><stop offset=".7" stop-color="#3A1606" stop-opacity="0"/><stop offset="1" stop-color="#3A1606" stop-opacity=".38"/></radialGradient>
-            <filter id="mtex" x="0" y="0" width="100%" height="100%">
-              <feTurbulence type="fractalNoise" baseFrequency=".017" numOctaves="5" seed="11" result="n"/>
-              <feDiffuseLighting in="n" surfaceScale="2.4" lighting-color="#ffffff" result="lit"><feDistantLight azimuth="235" elevation="56"/></feDiffuseLighting>
-              <feComposite in="lit" in2="SourceGraphic" operator="in" result="litc"/>
-              <feBlend in="SourceGraphic" in2="litc" mode="multiply"/>
-            </filter>
-          </defs>
-          <circle cx="200" cy="200" r="198" fill="url(#mg)" filter="url(#mtex)"/>
-          <circle cx="200" cy="200" r="198" fill="url(#ms)"/>
-        </svg>
+        <img class="moon" src="img/moon-1200.avif" srcset="img/moon-640.avif 640w, img/moon-1200.avif 1200w" sizes="(max-width:900px) 66vw, 40vw" width="1200" height="1200" fetchpriority="high" decoding="async" alt="">
       </div>
       <svg class="hills" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 60V34C70 26 130 18 210 22s130-14 210-8 140 22 210 26 120 10 190 12l820 4v30z" fill="#080B20"/></svg>
     </div>
@@ -498,7 +485,7 @@ body.is-staff .nav,body.is-staff .preview{display:none}
 
   <section class="strip" aria-label="Photos of RISE">
     <div class="wrap strip-grid">
-      <figure><img src="img/sunset.avif" width="1054" height="1200" fetchpriority="high" decoding="async" alt="Sunset over Pattaya Bay from the RISE deck, with wicker chairs, gold table lamps and a saxophonist by the rail"><figcaption class="cap" data-i18n="ph.sunset">Sunset over Pattaya Bay</figcaption></figure>
+      <figure><img src="img/sunset.avif" width="1054" height="1200" decoding="async" alt="Sunset over Pattaya Bay from the RISE deck, with wicker chairs, gold table lamps and a saxophonist by the rail"><figcaption class="cap" data-i18n="ph.sunset">Sunset over Pattaya Bay</figcaption></figure>
       <figure><img src="img/moonbar.avif" width="1054" height="1200" loading="lazy" decoding="async" alt="The giant glowing moon behind the outdoor bar at night, with bartenders at work"><figcaption class="cap" data-i18n="ph.moon">The moon bar</figcaption></figure>
       <figure><img src="img/djsunset.avif" width="961" height="1100" loading="lazy" decoding="async" alt="A DJ at the round gold booth with the sun setting over the bay behind"><figcaption class="cap" data-i18n="ph.dj">Live DJ from sunset</figcaption></figure>
     </div>
